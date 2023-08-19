@@ -8,7 +8,6 @@ void print_binary(unsigned int n);
 void print_octal(unsigned int n);
 void print_unsigned(unsigned int n);
 void print_hexa(unsigned int n);
-void print_cap_hexa(unsigned int n);
 typedef struct hex_rep {
 	unsigned int n;
 	char rep;

@@ -4,7 +4,7 @@
 int main(void)
 {
 	int i;
-	for (i = 0; i <= 100; i++)
+	for (i = 0; i >= -100; i--)
 	{
 		print_cap_hexa(i);
 		printf("  %X\n", i);
