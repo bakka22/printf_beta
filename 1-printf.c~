@@ -12,6 +12,8 @@ int _printf(const char *format, ...)
 	count = 0;
 	buffer = malloc(sizeof(char) * 1025);
 	j = 0;
+	/*buffer = malloc(sizeof(char) * 1025);*/
+	/*buffer[1024] = '\0';*/
 	va_start(args, format);
 	for (i = 0; format[i] != '\0' && i < 1024; i++)
 	{
@@ -21,8 +23,8 @@ int _printf(const char *format, ...)
 			i++;
 			count++;
 			j++;
-			if (j == 1023)
-				reset(buffer, &j);
+			/*if (j == 949)
+				reset(buffer, &j);*/
 		}
 		else if (format[i] == '%' && format[i + 1] == 's')
 		{
@@ -39,8 +41,8 @@ int _printf(const char *format, ...)
 			buffer[j] = format[i];
 			count++;
 			j++;
-			if (j == 1023)
-				reset(buffer, &j);
+			/*if (j == 1023)
+				reset(buffer, &j);*/
 		}
 	}
 	printf("(%d,  %d,  %d)",_strlen(buffer), count, j);

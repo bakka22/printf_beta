@@ -6,7 +6,7 @@ void print_octal(unsigned int n, char *buffer, int *j, int *count)
 	{
 		buffer[*j] = (48 + (n % 8));
 		(*j)++;
-		(*count)++;
+		(*count)++
 	}
 	else
 	{

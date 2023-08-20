@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-void print_hexa (unsigned int n)
+void print_hexa (unsigned int n, char *buffer, int *j, int *count)
 {
 	hex_rep arr[6] = {
 		{10, 'a'},
@@ -16,7 +16,9 @@ void print_hexa (unsigned int n)
 	{
 		if (n % 16 < 10)
 		{
-			_putchar(48 + (n % 16));
+			buffer[*j] = (48 + (n % 16));
+			(*j)++;
+			(*count)++;
 		}
 		else
 		{
@@ -24,7 +26,9 @@ void print_hexa (unsigned int n)
 			{
 				if ((n % 16) == (arr[i].n))
 				{
-					_putchar(arr[i].rep);
+					buffer[*j] = (arr[i].rep);
+					(*j)++;
+					(*count)++;
 					break;
 				}
 			}
@@ -32,10 +36,12 @@ void print_hexa (unsigned int n)
 	}
 	else
 	{
-		print_hexa(n / 16);
+		print_hexa(n / 16, buffer, j, count);
 		if (n % 16 < 10)
 		{
-			_putchar(48 + (n % 16));
+			buffer[*j] = (48 + (n % 16));
+			(*j)++;
+			(*count)++;
 		}
 		else
 		{
@@ -43,7 +49,9 @@ void print_hexa (unsigned int n)
 			{
 				if ((n % 16) == (arr[i].n))
 				{
-					_putchar(arr[i].rep);
+					buffer[*j] = (arr[i].rep);
+					(*j)++;
+					(*count)++;
 					break;
 				}
 					

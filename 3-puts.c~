@@ -19,7 +19,7 @@ void _puts(char *str, char *buffer, int *j, int *count)
 		p += 1;
 		(*j)++;
 		(*count)++;
- 		if (*j == 1023)
-			*j = 0;
+ 		/*if (*j == 1023)
+			*j = 0;*/
 	}
 }

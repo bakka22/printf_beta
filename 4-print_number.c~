@@ -15,7 +15,7 @@ void print_number(int n, char *buffer, int *j, int *count)
 		buffer[*j] = '-';
 		(*j)++;
 		(*count)++;
-		if (*j == 1023)
+		if (*j == 949)
 			reset(buffer, j);
 	}
 	else
@@ -31,6 +31,6 @@ void print_number(int n, char *buffer, int *j, int *count)
 	buffer[*j] = (n1 % 10 + '0');
 	(*j)++;
 	(*count)++;
-	if (*j == 1023)
+	if (*j == 949)
 		reset(buffer, j);
 }

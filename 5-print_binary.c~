@@ -20,7 +20,7 @@ void print_binary(unsigned int n, char *buffer, int *j, int *count)
 			{
 				buffer[*j] = arr[i + x];
 				(*j)++;
-				(*count)++;
+				(*count)++
 			}
 			return ;
 		}
