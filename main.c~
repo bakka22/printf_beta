@@ -1,4 +1,4 @@
-	#include "main.h"
+#include "main.h"
 #include <stdio.h>
 #include <unistd.h>
 int main(void)
@@ -19,7 +19,7 @@ int main(void)
 	/*_printf("%u", 8271663812918832321);*/
 	/*printf("%u", 8271663812918832321);*/
 	_printf("%p", p2);
-	printf("%p\n", p2);
+	printf("%p", p2);
 	_printf("%p", p);
 	printf("%p", p);
 		return (0);

@@ -13,9 +13,9 @@ void print_hexa(unsigned int n, char *buffer, int *j, int *count);
 void print_pointer(long unsigned int n, char *buffer, int *j, int *count);
 void print_cap_hexa(unsigned int n, char *buffer, int *j, int *count);
 void printS(char *str, char *buffer, int *j, int *count);
+void printer(unsigned int n, char *buffer, int *j, int *count, hex_rep arr[6]);
 typedef struct hex_rep {
 	unsigned int n;
 	char rep;
 }hex_rep;
-void printer(unsigned int n, char *buffer, int *j, int *count, hex_rep arr[6]);
 #endif

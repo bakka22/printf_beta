@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				_puts("0x", buffer, &j, &count);
+				_puts("0x"), buffer, &j, &count);
 				print_pointer((long unsigned int)mid, buffer, &j, &count);
 			}
 			i++;
