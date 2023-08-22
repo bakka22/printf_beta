@@ -48,6 +48,14 @@ void director2(va_list args, char *buffer, int *j, int *count, char c, int *i)
 				print_octal(va_arg(args, unsigned int), buffer, j, count);
 				(*i) += 2;
 				break;
+			case 'r':
+				print_rev(va_arg(args, char *), buffer, j, count);
+				(*i) += 2;
+				break;
+			case 'R':
+				print_rot13(va_arg(args, char *), buffer, j, count);
+				(*i) += 2;
+				break;
 		}
 }
 /**

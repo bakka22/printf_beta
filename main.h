@@ -14,6 +14,8 @@ void print_hexa(unsigned int n, char *buffer, int *j, int *count);
 void print_pointer(unsigned long int n, char *buffer, int *j, int *count);
 void print_cap_hexa(unsigned int n, char *buffer, int *j, int *count);
 void printS(char *str, char *buffer, int *j, int *count);
+void print_rev(char *s, char *buffer, int *j, int *count);
+void print_rot13(char *s, char *buffer, int *j, int *count);
 /**
 *struct hex_rep - bind a base 10 number with a base 16 char
 *@n: base 10 number
