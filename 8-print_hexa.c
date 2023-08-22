@@ -1,6 +1,14 @@
 #include "main.h"
 #include <stdio.h>
 #include <stddef.h>
+/**
+*print_hexa - print int in hexadecimal form
+*@n : number to be printed
+*@buffer : local buffer to printf
+*@j : index for buffer
+*@count : number of charcters printes
+*Return: nothing
+*/
 void print_hexa(unsigned int n, char *buffer, int *j, int *count)
 {
 	hex_rep arr[6] = {

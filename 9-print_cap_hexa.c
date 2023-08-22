@@ -1,6 +1,14 @@
 #include "main.h"
 #include <stdio.h>
 #include <stddef.h>
+/**
+*print_cap_hexa - print number in capital hexadicimal form
+*@n : number to be printed
+*@buffer : local buffer on printf
+*@j : index to buffer
+*@count : the number of charcters printed
+*Return: nothing
+*/
 void print_cap_hexa(unsigned int n, char *buffer, int *j, int *count)
 {
 	hex_rep arr[6] = {

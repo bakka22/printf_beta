@@ -4,7 +4,7 @@
 * print_number - print a number to stdout
 *@n: the number to be printed
 *@buffer : local buffer on printf
-*@j : index of buffer
+*@j : index of buffer 
 *@count : number of charcters printed
 * Return: 1 if alphabet and 0 otherwise
 */

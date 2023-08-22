@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 /**
-*director2 - direct to the correct function for format specifier
+*director - direct to the correct function for format specifier
 *@args : argument of printf
 *@buffer : local buffer on printf
 *@j : index for buffer

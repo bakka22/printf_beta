@@ -3,57 +3,45 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+/**
+*_printf - prints formated text
+*@format: string and format specifiers to be printed
+*@...: arguments to be formatted and printed
+*Return: return the number of characters printed to stdout
+*/
 int _printf(const char *format, ...)
 {
 	int i, count, j;
 	va_list args;
 	char *buffer;
-	void *mid;
 
 	count = 0;
-	buffer = malloc(sizeof(char) * 1025);
+	buffer = malloc(sizeof(char) * 1024);
 	j = 0;
 	va_start(args, format);
-	for (i = 0; format[i] != '\0' && i < 1024; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%' && format[i + 1] == 'c')
 		{
 			buffer[j] = va_arg(args, int);
-			i++;
+			i += 2;
 			count++;
 			j++;
-			if (j == 1023)
+			if (j == 1022)
 				reset(buffer, &j);
 		}
-		else if (format[i] == '%' && format[i + 1] == 'p')
+		else if	(format[i] == '%')
 		{
-			mid = va_arg(args, void *);
-			if (mid == NULL)
-			{
-				_puts("(nil)", buffer, &j, &count);
-			}
-			else
-			{
-				_puts("0x", buffer, &j, &count);
-				print_pointer((long unsigned int)mid, buffer, &j, &count);
-			}
-			i++;
+			director(args, buffer, &j, &count, format[i + 1], &i);
+			if (format[i] == '\0')
+				break;
 		}
-		else if (format[i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
-		{
-			print_number(va_arg(args, int), buffer, &j, &count);
-			i++;
-		}
-		else
-		{
-			buffer[j] = format[i];
-			count++;
-			j++;
-			if (j == 1023)
-				reset(buffer, &j);
-		}
+		buffer[j] = format[i];
+		count++;
+		j++;
+		if (j == 1022)
+			reset(buffer, &j);
 	}
-	printf("(%d,  %d,  %d)",_strlen(buffer), count, j);
 	write(1, buffer, _strlen(buffer));
 	free(buffer);
 	va_end(args);

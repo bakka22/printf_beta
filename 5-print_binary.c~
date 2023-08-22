@@ -23,7 +23,7 @@ void print_binary(unsigned int n, char *buffer, int *j, int *count)
 	{
 		if (arr[i] == '1')
 		{
-			for (x = 0; arr[x + i] != '\0'; x++)
+			for (x = 0; arr[x + i ] != '\0'; x++)
 			{
 				buffer[*j] = arr[i + x];
 				(*j)++;

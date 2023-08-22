@@ -1,9 +1,12 @@
 #include "main.h"
 
 /**
-* _puts - check if charcter is an alphabet
-* @str : pointer argument
-* Return: 1 if alphabet and 0 otherwise
+* _puts - print a string to stdout
+*@str : pointer to string to be printed
+*@buffer: local buffer of printf
+*@j : index for buffer
+*@count : count of charcters printed on printf
+* Return: nothing
 */
 void _puts(char *str, char *buffer, int *j, int *count)
 {
@@ -19,7 +22,7 @@ void _puts(char *str, char *buffer, int *j, int *count)
 		p += 1;
 		(*j)++;
 		(*count)++;
- 		if (*j == 1023)
+		if (*j == 1022)
 			reset(buffer, j);
 	}
 }

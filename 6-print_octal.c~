@@ -1,12 +1,12 @@
-	#include "main.h"
+#include "main.h"
 #include <stdio.h>
 /**
 *print_octal - print int in octal form
 *@n : number to be printed
-*@buffer : local buffer on printf
+*@ buffer : local buffer on printf
 *@j : index to buffer
 *@count : number of charcters printed
-*Return: nothing
+*@Return: nothing
 */
 void print_octal(unsigned int n, char *buffer, int *j, int *count)
 {

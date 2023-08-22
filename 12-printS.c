@@ -1,9 +1,12 @@
 #include "main.h"
 
 /**
-* _puts - check if charcter is an alphabet
-* @str : pointer argument
-* Return: 1 if alphabet and 0 otherwise
+* printS - print a string
+*@str : the string too be printed
+*@buffer : local buffer on printf
+*@j : index of buffer
+*@count : number of charcters printed
+* Return: nothing
 */
 void printS(char *str, char *buffer, int *j, int *count)
 {
@@ -14,17 +17,16 @@ void printS(char *str, char *buffer, int *j, int *count)
 	{
 		if (*p == '\0')
 			break;
-
 		if ((*p > 0 && *p < 32) || *p >= 127)
 		{
 			buffer[*j] = '\\';
 			(*j)++;
-			if (*j == 1023)
+			if (*j == 1022)
 				reset(buffer, j);
 
 			buffer[*j] = 'x';
 			(*j)++;
-			if (*j == 1023)
+			if (*j == 1022)
 				reset(buffer, j);
 
 			(*count) += 2;
@@ -32,7 +34,7 @@ void printS(char *str, char *buffer, int *j, int *count)
 			{
 				buffer[*j] = '0';
 				(*j)++;
-				if (*j == 1023)
+				if (*j == 1022)
 					reset(buffer, j);
 
 				(*count)++;
@@ -44,7 +46,7 @@ void printS(char *str, char *buffer, int *j, int *count)
 		p += 1;
 		(*j)++;
 		(*count)++;
- 		if (*j == 1023)
+		if (*j == 1022)
 			reset(buffer, j);
 	}
 }

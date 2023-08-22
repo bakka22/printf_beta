@@ -1,7 +1,15 @@
 #include "main.h"
 #include <stdio.h>
 #include <stddef.h>
-void print_pointer (long unsigned int n, char *buffer, int *j, int *count)
+/**
+*print_pointer - print a pointer in hexadecimal
+*@n : pointer converted to long unsigned it
+*@buffer : local buffer on printf
+*@j : index for buffer
+*@count : number of charcters printed
+*Rerutn: nothing
+*/
+void print_pointer(unsigned long int n, char *buffer, int *j, int *count)
 {
 	hex_rep arr[6] = {
 		{10, 'a'},
@@ -11,21 +19,7 @@ void print_pointer (long unsigned int n, char *buffer, int *j, int *count)
 		{14, 'e'},
 		{15, 'f'}
 };
-	/*int i;
-	char nil[6] = "(nil)";*/
 
-	/*if (n1 == NULL)
-	{
-		for (i = 0; nil[i] != '\0'; i++)
-		{
-			buffer[*j] = nil[i];
-			(*j)++;
-			(*count)++;
-			if (*j == 1023)
-				reset(buffer, j);
-		}
-		return;
-	}*/
 	if (n < 16)
 	{
 		printer(n, buffer, j, count, arr);
